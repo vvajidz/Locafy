@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  postgres-user:
+    image: postgres:15.4-alpine
+    profiles: ["stack"]
+    # ... rest of config ...
+
+  user-api:
+    build: ./services/user-api
+    profiles: ["stack"]
+    # ... rest of config ...
+
+  frontend:
+    build: ./frontend/locafy-web
+    profiles: ["stack"]
+    # ... rest of config ...
+
+  # Other services (kafka, zookeeper, redis, payment-api, etc.) omitted or left without "stack" profile.
