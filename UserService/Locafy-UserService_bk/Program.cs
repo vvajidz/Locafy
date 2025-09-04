@@ -1,4 +1,7 @@
 
+using Npgsql;
+using System.Data;
+
 namespace Locafy_UserService_bk
 {
     public class Program
@@ -13,6 +16,23 @@ namespace Locafy_UserService_bk
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            // Add CORS policy to allow requests from any origin
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", policy =>
+                {
+                    policy.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
+                });
+            });
+            // Register the IDbConnection service with a PostgreSQL connection
+            builder.Services.AddScoped<IDbConnection>(provider =>
+            {
+                var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+                return new NpgsqlConnection(connectionString);
+            });
+
 
             var app = builder.Build();
 
@@ -22,7 +42,7 @@ namespace Locafy_UserService_bk
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseCors("AllowAll");
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
