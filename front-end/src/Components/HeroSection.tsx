@@ -23,8 +23,6 @@ export function HeroSection() {
           <p className="text-base md:text-lg text-gray-600 max-w-md">
             Connect with verified professionals near you. From home repairs to personal care, we've got you covered.
           </p>
-
-          {/* Search Bar */}
           <div className="backdrop-blur-xl bg-white/40 p-4 md:p-6 rounded-2xl border border-white/30 shadow-lg space-y-3">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div className="sm:col-span-2 relative">
@@ -40,8 +38,6 @@ export function HeroSection() {
               Find Services
             </Button>
           </div>
-
-          {/* Stats */}
           <div className="grid grid-cols-3 gap-4 md:gap-6">
             {[
               { number: "15K+", label: "Providers", icon: Users },
