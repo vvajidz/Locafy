@@ -169,7 +169,7 @@ export default function Footer() {
               </li>
             </ul>
 
-            <div className="bg-emerald-100 p-4 rounded-lg">
+            <div className="bg-white-100 p-4 rounded-lg">
               <p className="font-medium text-gray-900 mb-2">Stay Updated</p>
               <p className="text-sm text-gray-600 mb-3">
                 Get the latest updates on new services and special offers.

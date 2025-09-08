@@ -6,7 +6,7 @@ import { Checkbox } from "@/ui/checkbox";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
-export function SignUp({ onSwitch }: { onSwitch: () => void }) {
+export function SignUp({ onSwitch, onSuccess }: { onSwitch: () => void; onSuccess: () => void }) {
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -32,6 +32,7 @@ export function SignUp({ onSwitch }: { onSwitch: () => void }) {
     }
     setError("");
     console.log("Form Data:", formData);
+    onSuccess();
   };
 
   return (
