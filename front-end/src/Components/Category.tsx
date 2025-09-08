@@ -46,7 +46,6 @@ return (
                      transition-all duration-300 cursor-pointer group"
         >
           <div className="flex items-center mb-4">
-            {/* Icon with hover scale */}
             <span className="text-3xl mr-3 group-hover:scale-110 transition-transform duration-300">
               {category.icon}
             </span>

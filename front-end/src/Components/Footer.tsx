@@ -14,15 +14,13 @@ export default function Footer() {
     <footer className="bg-white border-t pt-12">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12">
-          {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Heart className="w-6 h-6 text-emerald-600" />
               <span className="font-bold text-lg text-gray-900">Locafy</span>
             </div>
             <p className="text-sm text-emerald-700 bg-emerald-50 inline-block px-3 py-1 rounded-full mb-4">
-              The Friendly Trustable Service
-            </p>
+              The Friendly Trustable Service </p>
             <p className="text-gray-600 text-sm mb-4">
               Connecting communities with trusted local service providers. We
               believe in building lasting relationships between neighbors,
@@ -72,8 +70,6 @@ export default function Footer() {
               </a>
             </div>
           </div>
-
-          {/* Our Locations */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
               <MapPin className="w-4 h-4 text-emerald-600" />
@@ -146,8 +142,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
-          {/* Resources & Subscribe */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">
               Resources & Legal
@@ -175,7 +169,7 @@ export default function Footer() {
               </li>
             </ul>
 
-            <div className="bg-emerald-50 p-4 rounded-lg">
+            <div className="bg-emerald-100 p-4 rounded-lg">
               <p className="font-medium text-gray-900 mb-2">Stay Updated</p>
               <p className="text-sm text-gray-600 mb-3">
                 Get the latest updates on new services and special offers.
@@ -193,8 +187,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
-        {/* Bottom Bar */}
         <div className="border-t py-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
           <p>
             © 2025 Locafy. Made with{" "}
