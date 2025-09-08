@@ -26,22 +26,14 @@ export function LogIn({ onSwitch }: { onSwitch: () => void }) {
             {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
           </button>
         </div>
-
-        {/* Forgot Password */}
         <div className="flex justify-end">
           <button className="text-sm text-emerald-600 hover:underline">
             Forgot password?
           </button>
         </div>
-
-        {/* Login Button */}
         <Button className="w-full bg-emerald-600 text-white hover:bg-emerald-700">
           Login
         </Button>
-
-   
-
-        {/* Social Logins */}
         <div className="flex flex-col space-y-2">
           <Button
             variant="outline"
