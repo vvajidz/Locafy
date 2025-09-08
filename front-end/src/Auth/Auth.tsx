@@ -1,26 +1,29 @@
 import { useState } from "react";
 import { LogIn } from "./Login";
 import { SignUp } from "./SignUp";
+import { OtpInput } from "./Otp";
 
-export function AuthDialog({ startOn = "signup" }: { startOn?: "login" | "signup" }) {
-  // true => show signup, false => show login
-  const [showSignup, setShowSignup] = useState(startOn === "signup");
+type AuthView = "login" | "signup" | "otp";
+
+export function AuthDialog({ startOn = "signup" }: { startOn?: AuthView }) {
+  const [currentView, setCurrentView] = useState<AuthView>(startOn);
 
   return (
     <div className="relative w-[360px] h-[480px] [perspective:1000px]">
       <div
         className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
-          showSignup ? "rotate-y-180" : ""
+          currentView === "signup" || currentView === "otp" ? "rotate-y-180" : ""
         }`}
       >
-        {/* Front face — Login */}
         <div className="absolute inset-0 [backface-visibility:hidden] flex items-center justify-center">
-          <LogIn onSwitch={() => setShowSignup(true)} />
+          <LogIn onSwitch={() => setCurrentView("signup")} />
         </div>
-
-        {/* Back face — Signup */}
         <div className="absolute inset-0 rotate-y-180 [backface-visibility:hidden] flex items-center justify-center">
-          <SignUp onSwitch={() => setShowSignup(false)} />
+          {currentView === "signup" ? (
+            <SignUp onSwitch={() => setCurrentView("login")} onSuccess={() => setCurrentView("otp")} />
+          ) : (
+            <OtpInput onSwitch={() => setCurrentView("signup")} />
+          )}
         </div>
       </div>
     </div>
